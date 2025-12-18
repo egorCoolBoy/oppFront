@@ -1,0 +1,6 @@
+:root {
+    --border-color: #B9B9B9;
+    --border: 1px solid var(--border-color);
+    --border-radius: 8px;
+    --box-shadow: 0px 2px 10px 0px #0000001A;
+}

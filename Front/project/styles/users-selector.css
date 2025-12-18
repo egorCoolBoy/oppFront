@@ -1,0 +1,11 @@
+.users-selector-dialog,
+.tasks-selector-dialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    margin: 0;
+    height: 100vh;
+    width: 30vw;
+    border: var(--border)
+}

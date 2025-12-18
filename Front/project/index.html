@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="team.js" defer></script>
+    <script type="module" src="tasks.js" defer></script>
+    <script type="module" src="main.js" defer></script>
+    <title>opp</title>
+</head>
+
+<body>
+    <header class="project-header">
+        <hgroup class="project-meta-container">
+            <h1 class="project-title"></h1>
+            <p class="subject-title"></p>
+        </hgroup>
+        <nav class="header-nav">
+            <a href="../projects/index.html">Проекты</a>
+            <button class="team-panel-open-button">Команда</button>
+        </nav>
+        <!-- <button class="button-logout">Выйти</button> -->
+    </header>
+    <main>
+        <div class="projects-sidebar"></div>
+        <table class="tasks-table" border="1" cellpadding="8">
+            <thead>
+                <tr>
+                    <th>Задача</th>
+                    <th>Исполнитель</th>
+                    <th>Дедлайн</th>
+                    <th>Статус</th>
+                    <th>Зависимости</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="tasks-table-body"></tbody>
+            <tfoot>
+                <tr>
+                    <td class="create-task-cell" colspan="7">
+                        <button class="task-create-button">+ Создать новую задачу</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+    <dialog class="task-create-dialog">
+        <form method="dialog" class="task-create-form">
+            <input type="text" class="task-create-title-input" name="title">
+            <button class="task-create-submit-button">Создать</button>
+        </form>
+    </dialog>
+    <dialog class="task-edit-dialog">
+        <h2 class="task-edit-heading">Параметры задачи</h2>
+        <form method="dialog" class="task-edit-form">
+            <input type="text" name="id" hidden>
+            <p class="task-edit-field title">
+                <label for="title">Название: </label>
+                <input type="text" name="title" id="title">
+            </p>
+            <p class="task-edit-field description">
+                <label for="description">Описание: </label>
+                <input type="text" name="description" id="description">
+            </p>
+            <p class="task-edit-field users">
+                <label for="users">Исполнитель: </label>
+                <button type="button" class="users-selector-open-button">Выбрать</button>
+                <!-- <select name="users" id="users" multiple>
+                    <option value="">Выберите исполнителей</option>
+                </select>  -->
+            </p>
+            <p class="task-edit-field deadline">
+                <label for="deadline">Дедлайн: </label>
+                <input type="date" name="deadline" id="deadline">
+            </p>
+            <p class="task-edit-field taskStatus">
+                <label for="taskStatus">Статус: </label>
+                <select name="taskStatus" id="taskStatus">
+                    <option value="None">Не выполняется</option>
+                    <option value="InProcess">В процессе</option>
+                    <option value="Completed">Готово</option>
+                </select>        
+            </p>
+            <p class="task-edit-field predecessors">
+                <label for="predecessors">Зависимости: </label>
+                <button type="button" class="tasks-selector-open-button">Выбрать</button>
+                <!-- <select name="predecessors" id="predecessors">
+                    <option value="">Выберите зависимости</option>
+                </select>  -->
+            </p>
+            <button type="submit" class="submit-button">OK</button>
+        </form>
+    </dialog>
+    <dialog class="team-panel-dialog">
+        <header class="team-panel-header">
+            <h2>Team</h2>
+            <button class="team-panel-close-button">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7193 1.69471C14.9014 1.50611 15.0022 1.25351 15 0.991311C14.9977 0.729114 14.8925 0.478302 14.7071 0.292894C14.5217 0.107485 14.2709 0.00231622 14.0087 3.78025e-05C13.7465 -0.00224062 13.4939 0.0985542 13.3053 0.280712L7.51229 6.07371L1.71929 0.280712C1.53069 0.0985542 1.27808 -0.00224062 1.01589 3.78025e-05C0.75369 0.00231622 0.502878 0.107485 0.31747 0.292894C0.132062 0.478302 0.0268924 0.729114 0.0246139 0.991311C0.0223355 1.25351 0.12313 1.50611 0.305288 1.69471L6.09829 7.48771L0.305288 13.2807C0.209778 13.373 0.133596 13.4833 0.0811869 13.6053C0.0287779 13.7273 0.00119157 13.8585 3.77571e-05 13.9913C-0.00111606 14.1241 0.0241854 14.2558 0.0744663 14.3787C0.124747 14.5016 0.199 14.6132 0.292893 14.7071C0.386786 14.801 0.498438 14.8753 0.621334 14.9255C0.744231 14.9758 0.87591 15.0011 1.00869 15C1.14147 14.9988 1.27269 14.9712 1.39469 14.9188C1.5167 14.8664 1.62704 14.7902 1.71929 14.6947L7.51229 8.90171L13.3053 14.6947C13.4939 14.8769 13.7465 14.9777 14.0087 14.9754C14.2709 14.9731 14.5217 14.8679 14.7071 14.6825C14.8925 14.4971 14.9977 14.2463 15 13.9841C15.0022 13.7219 14.9014 13.4693 14.7193 13.2807L8.92629 7.48771L14.7193 1.69471Z" fill="#4186C8"/>
+                </svg>
+            </button>
+        </header>
+        <h3>Владелец: <span class="owner-email"></span></h3>
+        <h3 class="users-heading">Участники:</h3>
+        <ul class="users-list"></ul>
+        <dialog class="user-add-dialog">
+            <form method="dialog" class="user-add-form">
+                <p>Введите email-адрес участника, которого хотите добавить</p>
+                <input type="email" name="email">
+                <button class="submit-button">Добавить</button>
+            </form>
+        </dialog>
+        
+    </dialog>
+    <dialog class="users-selector-dialog">
+        <form method="dialog" class="users-selector-form">
+            <ul class="users-selector-list"></ul>
+            <button class="users-selector-submit-button">ОК</button>
+        </form>
+    </dialog>
+    <dialog class="tasks-selector-dialog">
+        <form method="dialog" class="tasks-selector-form">
+            <ul class="tasks-selector-list"></ul>
+            <button class="tasks-selector-submit-button">ОК</button>
+        </form>
+    </dialog>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Projects</title>
+</head>
+
+<body>
+    <header class="project-header">
+        <h1 class="project-title">Project title</h1>
+        <button class="button-logout">Logout</button>
+    </header>
+    <main>
+        <button class="project-create-button">Create new project</button>
+        <ul class="subjects-list" id="subjects-list"></ul>
+    </main>
+    <dialog class="project-create-dialog" id="project-create-dialog">
+        <h2>Create Project</h2>
+        <form method="dialog" name="project-create-form">
+            <p>
+                <label for="title">Название</label>
+                <input type="text" name="title" id="title">
+            </p>
+            <p>
+                <label for="description">Описание</label>
+                <input type="text" name="description" id="description">
+            </p>
+            <p>
+                <label for="subjectId">Предмет</label>
+                <select name="subjectId" id="subjectId"></select>
+            </p>
+            <button type="submit" name="submit-button">OK</button>
+        </form>
+    </dialog>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+.team-panel-dialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    margin: 0;
+    height: 100vh;
+    width: 30vw;
+    border: var(--border)
+}
+
+.team-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team-panel-close-button {
+    padding: 6px;
+    font-size: 0;
+}

@@ -1,0 +1,15 @@
+.task-edit-dialog {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: 500px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+}
+
+.task-edit-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}

@@ -1,0 +1,16 @@
+.tasks-table {
+    /* display: inline-block; */
+    position: relative;
+    width: 100%;
+    border-color: var(--border-color);
+    border-color: #B9B9B9;
+    box-shadow: var(--box-shadow);
+
+    th {
+        background-color: #ededed;
+    }
+}
+
+.create-task-cell {
+    text-align: center;
+}
