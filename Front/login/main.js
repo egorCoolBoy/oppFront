@@ -5,8 +5,6 @@ const loginForm = document.forms['login']
 const submitButton = loginForm.submitButton
 submitButton.addEventListener('click', onLoginFormSubmit)
 
-loginForm.email.value = 'ega02022006@gmail.com'
-loginForm.password.value = '890981298e'
 
 async function onLoginFormSubmit(event) {
     event.preventDefault()
